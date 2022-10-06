@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ZEFXML"/>
+  <xs:element name="id" type="xs:string"/>
+  <xs:element name="mpn" type="xs:string"/>
+  <xs:element name="version" type="xs:string"/>
+  <xs:complexType name="authors">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+    </xs:sequence>
+  <xs:complexType/> 
+  <xs:element name="date" type="xs:date"/>
+  <xs:element name="manufacturer" type="xs:string"/>
+
+  <xs:element name="mech">
+    <xs:element name="smt_compatible" type="xs:string"/>
+    <xs:element name="orientation_ccw" type="xs:integer"/>
+    <xs:element name="mold_material" type="xs:string"/>
+    <xs:element name="reflow_prof" type="xs:string"/>
+    <xs:complexType name="width">
+      <xs:element name="typ" type="xs:integer"/>
+      <xs:element name="tol" type="xs:integer"/>
+      <xs:element name="min" type="xs:integer"/>
+      <xs:element name="max" type="xs:integer"/>
+      <xs:element name="unit" type="xs:string"/>
+    </xs:complexType> 
+    <xs:complexType name="length"> 
+      <xs:element name="typ" type="xs:integer"/>
+      <xs:element name="tol" type="xs:integer"/>
+      <xs:element name="min" type="xs:integer"/>
+      <xs:element name="max" type="xs:integer"/>
+      <xs:element name="unit" type="xs:string"/>
+    </xs:complexType> 
+    <xs:complexType name="thickness"> 
+      <xs:element name="typ" type="xs:integer"/>
+      <xs:element name="tol" type="xs:integer"/>
+      <xs:element name="min" type="xs:integer"/>
+      <xs:element name="max" type="xs:integer"/>
+      <xs:element name="unit" type="xs:string"/>
+    </xs:complexType> 
+    <xs:complexType name="width"> 
+      <xs:element name="typ" type="xs:integer"/>
+      <xs:element name="tol" type="xs:integer"/>
+      <xs:element name="min" type="xs:integer"/>
+      <xs:element name="max" type="xs:integer"/>
+      <xs:element name="unit" type="xs:string"/>
+    </xs:complexType> 
+    <xs:complexType name="width"> 
+      <xs:element name="typ" type="xs:integer"/>
+      <xs:element name="tol" type="xs:integer"/>
+      <xs:element name="min" type="xs:integer"/>
+      <xs:element name="max" type="xs:integer"/>
+      <xs:element name="unit" type="xs:string"/>
+    </xs:complexType> 
+    <xs:element name="bump">
+      <xs:complexType name="pitch"> 
+          <xs:element name="typ" type="xs:integer"/>
+          <xs:element name="tol" type="xs:integer"/>
+          <xs:element name="min" type="xs:integer"/>
+          <xs:element name="max" type="xs:integer"/>
+          <xs:element name="unit" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="thickness"> 
+          <xs:element name="typ" type="xs:integer"/>
+          <xs:element name="tol" type="xs:integer"/>
+          <xs:element name="min" type="xs:integer"/>
+          <xs:element name="max" type="xs:integer"/>
+          <xs:element name="unit" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="diameter"> 
+          <xs:element name="typ" type="xs:integer"/>
+          <xs:element name="tol" type="xs:integer"/>
+          <xs:element name="min" type="xs:integer"/>
+          <xs:element name="max" type="xs:integer"/>
+          <xs:element name="unit" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="count"> 
+          <xs:element name="pop" type="xs:integer"/>
+          <xs:element name="unpop" type="xs:integer"/>
+      </xs:complexType>
+    </xs:element> 
+  </xs:element> 
+
+  <xs:complexType name="io"> 
+    <xs:sequence>
+      <xs:element name="pnum" type="xs:integer"/>
+      <xs:element name="pname" type="xs:string"/>
+      <xs:element name="sig_type" type="xs:string"/>
+      <xs:element name="dir" type="xs:string"/>
+      <xs:element name="mech_type" type="xs:string"/>
+      <xs:element name="netlist_name" type="xs:string"/>
+      <xs:element name="vdd_pin" type="xs:string"/>
+      <xs:element name="gnd_pin" type="xs:string"/>
+      <xs:complexType name="impedance"> 
+        <xs:element name="value" type="xs:integer"/>
+        <xs:element name="unit" type="xs:string"/>
+      </xs:complexType> 
+      <xs:complexType name="v_max"> 
+        <xs:element name="value" type="xs:integer"/>
+        <xs:element name="unit" type="xs:string"/>
+      </xs:complexType> 
+      <xs:complexType name="f"> 
+        <xs:element name="typ" type="xs:integer"/>
+        <xs:element name="tol" type="xs:integer"/>
+        <xs:element name="min" type="xs:integer"/>
+        <xs:element name="max" type="xs:integer"/>
+        <xs:element name="unit" type="xs:string"/>
+        <xs:element name="unit" type="xs:string"/>
+      </xs:complexType> 
+      <xs:complexType name="position"> 
+        <xs:element name="x" type="xs:integer"/>
+        <xs:element name="y" type="xs:integer"/>
+        <xs:element name="unit" type="xs:string"/>
+      </xs:complexType> 
+      <xs:complexType name="pin_mode"> 
+        <xs:element name="id" type="xs:integer"/>
+        <xs:element name="name" type="xs:string"/>
+      </xs:complexType> 
+      <xs:complexType name="sig_group"> 
+        <xs:complexType>
+          <xs:element name="id" type="xs:integer"/>
+          <xs:element name="name" type="xs:string"/>
+        </xs:complexType>
+      </xs:complexType> 
+      <xs:complexType name="C"> 
+        <xs:element name="typ" type="xs:integer"/>
+        <xs:element name="tol" type="xs:integer"/>
+        <xs:element name="min" type="xs:integer"/>
+        <xs:element name="max" type="xs:integer"/>
+        <xs:element name="unit" type="xs:string"/>
+      </xs:complexType> 
+      <xs:complexType name="ESD"> 
+        <xs:element name="type" type="xs:string"/>
+        <xs:element name="rating" type="xs:integer"/>
+      </xs:complexType> 
+    </xs:sequence>
+  <xs:complexType/> 
+
+  <xs:element name="elect">
+    <xs:complexType name="ESD"> 
+      <xs:element name="type" type="xs:string"/>
+      <xs:element name="rating" type="xs:integer"/>
+    </xs:complexType> 
+    <xs:element name="abs_rating"> 
+      <xs:element name="v_max" type="xs:integer"/>
+      <xs:element name="i_max" type="xs:integer"/>
+    </xs:element> 
+    <xs:complexType name="op_modes"> 
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType> 
+    <xs:complexType name="v_modes"> 
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType> 
+    <xs:complexType name="pvt"> 
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType> 
+  </xs:element>
+</xs:schema>
