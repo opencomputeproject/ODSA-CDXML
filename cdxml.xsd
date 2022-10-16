@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="ZEFXML"/>
+<xs:element name="CDXML">
   <xs:element name="id" type="xs:string"/>
   <xs:element name="mpn" type="xs:string"/>
   <xs:element name="version" type="xs:string"/>
@@ -8,10 +8,9 @@
     <xs:sequence>
       <xs:element name="name" type="xs:string"/>
     </xs:sequence>
-  <xs:complexType/> 
+  </xs:complexType> 
   <xs:element name="date" type="xs:date"/>
   <xs:element name="manufacturer" type="xs:string"/>
-
   <xs:element name="mech">
     <xs:element name="smt_compatible" type="xs:string"/>
     <xs:element name="orientation_ccw" type="xs:integer"/>
@@ -80,7 +79,6 @@
       </xs:complexType>
     </xs:element> 
   </xs:element> 
-
   <xs:complexType name="io"> 
     <xs:sequence>
       <xs:element name="pnum" type="xs:integer"/>
@@ -134,8 +132,7 @@
         <xs:element name="rating" type="xs:integer"/>
       </xs:complexType> 
     </xs:sequence>
-  <xs:complexType/> 
-
+  </xs:complexType> 
   <xs:element name="elect">
     <xs:complexType name="ESD"> 
       <xs:element name="type" type="xs:string"/>
@@ -161,4 +158,5 @@
       </xs:sequence>
     </xs:complexType> 
   </xs:element>
+</xs:element>
 </xs:schema>
