@@ -4,11 +4,13 @@
     <mpn>BQ27426</mpn>
     <opn>BQ27426YZFT</opn>
     <version>1.0</version>
-    <date>2022-10-16</date>
+    <created_date>2022-10-16</created_date>
+    <updated_date>2022-10-16</updated_date>
     <authors>
-        <name>James Wong</name>
+        <person>
+            <name>James Wong</name>
+        </person>
     </authors>
-
     <mech>
         <smt_compatible>true</smt_compatible>
         <orientation_ccw>0</orientation_ccw>
@@ -43,9 +45,7 @@
                 <unpop>9</unpop>
             </count>
         </io>
-
     </mech>
-
     <io>
         <pin>
             <pnum>A1</pnum>
@@ -73,7 +73,6 @@
                 <rating>1500</rating>
             </esd>
         </pin>
-
         <pin>
             <pnum>A1</pnum>
             <pname>GPOUT</pname>
@@ -100,7 +99,6 @@
                 <rating>1500</rating>
             </esd>
         </pin>
-
         <pin>
             <pnum>A2</pnum>
             <pname>SDA</pname>
@@ -127,7 +125,6 @@
                 <rating>1500</rating>
             </esd>
         </pin>
-
         <pin>
             <pnum>A3</pnum>
             <pname>SCL</pname>
@@ -154,7 +151,6 @@
                 <rating>1500</rating>
             </esd>
         </pin>
-
         <pin>
             <pnum>B1</pnum>
             <pname>BIN</pname>
@@ -181,7 +177,6 @@
                 <rating>1500</rating>
             </esd>
         </pin>
-
         <pin>
             <pnum>B2</pnum>
             <pname>VSS</pname>
@@ -208,7 +203,6 @@
                 <rating>1500</rating>
             </esd>
         </pin>
-
         <pin>
             <pnum>B3</pnum>
             <pname>VDD</pname>
@@ -235,7 +229,6 @@
                 <rating>1500</rating>
             </esd>
         </pin>
-
         <pin>
             <pnum>C1</pnum>
             <pname>SRP</pname>
@@ -262,7 +255,6 @@
                 <rating>1500</rating>
             </esd>
         </pin>
-
         <pin>
             <pnum>C2</pnum>
             <pname>SRN</pname>
@@ -289,7 +281,6 @@
                 <rating>1500</rating>
             </esd>
         </pin>
-
         <pin>
             <pnum>C3</pnum>
             <pname>BAT</pname>
@@ -316,14 +307,11 @@
                 <rating>1500</rating>
             </esd>
         </pin>
-
     </io>
-
     <elect>
         <esd> 
             <type>HBM</type>
             <rating>1500</rating>
         </esd>
     </elect>
-
 </cdxml>

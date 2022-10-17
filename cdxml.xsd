@@ -7,16 +7,25 @@
       <xs:element name="mpn" type="xs:string"/>
       <xs:element name="opn" type="xs:string"/>
       <xs:element name="version" type="xs:string"/>
-      <xs:element name="date" type="xs:date"/>
+      <xs:element name="created_date" type="xs:date"/>
+      <xs:element name="updated_date" type="xs:date"/>
+      <xs:element name="type" type="xs:string" minOccurs="0"/>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
       <xs:element name="authors"> 
         <xs:complexType>  
           <xs:choice>  
-            <xs:element name="name" type="xs:string"/>
-            <xs:element name="email" type="xs:string" minOccurs="0"/>
+            <xs:element name="person" minOccurs="1" maxOccurs="unbounded"> 
+              <xs:complexType>  
+                <xs:all>  
+                  <xs:element name="name" type="xs:string"/>
+                  <xs:element name="email" type="xs:string" minOccurs="0"/>
+                  <xs:element name="company" type="xs:string" minOccurs="0"/>
+                </xs:all>  
+              </xs:complexType>  
+            </xs:element> 
           </xs:choice>  
         </xs:complexType>  
       </xs:element> 
-
       <xs:element name="mech"> 
         <xs:complexType>  
           <xs:all>  
@@ -60,7 +69,6 @@
             <xs:element name="io" minOccurs="0"> 
               <xs:complexType>  
                 <xs:all>  
-
                   <xs:element name="pitch"> 
                     <xs:complexType>  
                       <xs:all>  
@@ -72,7 +80,6 @@
                       </xs:all>  
                     </xs:complexType>  
                   </xs:element>  
-
                   <xs:element name="thickness"> 
                     <xs:complexType>  
                       <xs:all>  
@@ -84,7 +91,6 @@
                       </xs:all>  
                     </xs:complexType>  
                   </xs:element>  
-
                   <xs:element name="diameter"> 
                     <xs:complexType>  
                       <xs:all>  
@@ -96,7 +102,6 @@
                       </xs:all>  
                     </xs:complexType>  
                   </xs:element>  
-
                   <xs:element name="count"> 
                     <xs:complexType>  
                       <xs:all>  
@@ -105,21 +110,18 @@
                       </xs:all>  
                     </xs:complexType>  
                   </xs:element>  
-
                 </xs:all>  
               </xs:complexType>  
             </xs:element>  
           </xs:all>  
         </xs:complexType>  
       </xs:element>  
-
       <xs:element name="io" minOccurs="0"> 
         <xs:complexType>  
           <xs:choice>  
             <xs:element name="pin" minOccurs="0" maxOccurs="unbounded"> 
               <xs:complexType>  
                 <xs:all>  
-
                   <xs:element name="pnum" type="xs:string"/>
                   <xs:element name="pname" type="xs:string"/>
                   <xs:element name="sig_type" type="xs:string" minOccurs="0"/>
@@ -210,19 +212,15 @@
                       </xs:all>  
                     </xs:complexType>  
                   </xs:element>  
-
                 </xs:all>  
               </xs:complexType>  
             </xs:element>  
-
           </xs:choice>  
         </xs:complexType>  
       </xs:element>  
-
       <xs:element name="elect" minOccurs="0"> 
         <xs:complexType>  
           <xs:all>  
-
             <xs:element name="esd" minOccurs="0"> 
               <xs:complexType>  
                 <xs:all>  
@@ -239,7 +237,6 @@
                 </xs:all>  
               </xs:complexType>  
             </xs:element>  
-
             <xs:element name="op_modes" minOccurs="0"> 
               <xs:complexType>  
                 <xs:all>  
@@ -247,7 +244,6 @@
                 </xs:all>  
               </xs:complexType>  
             </xs:element>  
-
             <xs:element name="v_modes" minOccurs="0"> 
               <xs:complexType>  
                 <xs:all>  
@@ -255,7 +251,6 @@
                 </xs:all>  
               </xs:complexType>  
             </xs:element>  
-
             <xs:element name="pvt" minOccurs="0"> 
               <xs:complexType>  
                 <xs:all>  
@@ -263,11 +258,9 @@
                 </xs:all>  
               </xs:complexType>  
             </xs:element>  
-
           </xs:all>  
         </xs:complexType>  
       </xs:element>  
-
     </xs:all>  
   </xs:complexType>  
 </xs:element>  
