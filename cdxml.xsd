@@ -10,10 +10,10 @@
       <xs:element name="date" type="xs:date"/>
       <xs:element name="authors"> 
         <xs:complexType>  
-          <xs:all>  
+          <xs:choice>  
             <xs:element name="name" type="xs:string"/>
             <xs:element name="email" type="xs:string" minOccurs="0"/>
-          </xs:all>  
+          </xs:choice>  
         </xs:complexType>  
       </xs:element> 
 
