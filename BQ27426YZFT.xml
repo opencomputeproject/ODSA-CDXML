@@ -1,299 +1,329 @@
 <?xml version="1.0"?>
-<CDXML>
+<cdxml>
+    <id>U100540</id>
+    <mpn>BQ27426</mpn>
+    <opn>BQ27426YZFT</opn>
+    <version>1.0</version>
+    <date>2022-10-16</date>
+    <authors>
+        <name>James Wong</name>
+    </authors>
+
     <mech>
-        <manufacturing_part_number>BQ27426</manufacturing_part_number>
-        <orderable_part_number>BQ27426YZFT</orderable_part_number>
-        <chiplet_id>U100540</chiplet_id>
         <smt_compatible>true</smt_compatible>
-        <width_x_min>1550</width_x_min>
-        <width_x_typ>1580</width_x_typ>
-        <width_x_max>1610</width_x_max>
-        <width_x_tol></width_x_tol>
-        <length_x_min>1590</length_x_min>
-        <length_x_typ>1620</length_x_typ>
-        <length_x_max>1651</length_x_max>
-        <length_x_tol></length_x_tol>
-        <thickness_z_min></thickness_z_min>
-        <thickness_z_typ>625</thickness_z_typ>
-        <thickness_z_max>625</thickness_z_max>
-        <thickness_z_tol></thickness_z_tol>
-        <orientation_angle_ccw>0</orientation_angle_ccw>
-        <io_pitch>500</io_pitch>
-        <io_dia_min>250</io_dia_min>
-        <io_dia_typ></io_dia_typ>
-        <io_dia_max>300</io_dia_max>
-        <io_dia_tol></io_dia_tol>
-        <io_thickness_min>150</io_thickness_min>
-        <io_thickness_typ></io_thickness_typ>
-        <io_thickness_max>350</io_thickness_max>
-        <io_thickness_tol></io_thickness_tol>
-        <io_count>9</io_count>
-        <io_unpop_count>0</io_unpop_count>
-        <mold_material></mold_material>
-        <reflow_profile></reflow_profile>
-        <type></type>
-        <capacitance></capacitance>
-        <resistance></resistance>
-        <package></package>
-        <package_metric></package_metric>
+        <orientation_ccw>0</orientation_ccw>
+        <width>
+            <min>1550</min>
+            <typ>1580</typ>
+            <max>1610</max>
+        </width>
+        <length>
+            <min>1590</min>
+            <typ>1620</typ>
+            <max>1651</max>
+        </length>
+        <thickness>
+            <typ>625</typ>
+            <max>625</max>
+        </thickness>
+        <io>
+            <pitch>
+                <typ>500</typ>
+            </pitch>
+            <diameter>
+                <min>250</min>
+                <max>300</max>
+            </diameter>
+            <thickness>
+                <min>150</min>
+                <max>350</max>
+            </thickness>
+            <count>
+                <pop>9</pop>
+                <unpop>9</unpop>
+            </count>
+        </io>
+
     </mech>
+
     <io>
         <pin>
-            <pin_number>A1</pin_number>
-            <pin_name>GPOUT</pin_name>
-            <signal_type>Digital Output</signal_type>
-            <pin_dir></pin_dir>
-            <is_analog_routable>false</is_analog_routable>
-            <is_digital_routable>false</is_digital_routable>
-            <f_min></f_min>
-            <f_typ></f_typ>
-            <f_max>0.1</f_max>
-            <io_mechanical_type>Solder Ball</io_mechanical_type>
-            <ball_Location_x>-500</ball_Location_x>
-            <ball_Location_y>500</ball_Location_y>
-            <signal_group></signal_group>
-            <signal_group_index></signal_group_index>
+            <pnum>A1</pnum>
+            <pname>GPOUT</pname>
+            <sig_type>Digital Output</sig_type>
+            <mech_type>Solder Ball</mech_type>
             <netlist_name>BQ27426_GPOUT</netlist_name>
-            <pin_mode></pin_mode>
-            <num_modes></num_modes>
-            <esd_type>HBM</esd_type>
-            <esd_rating>1500</esd_rating>
-            <controlled_impedance></controlled_impedance>
             <vdd_pin>VDD</vdd_pin>
             <gnd_pin>VSS</gnd_pin>
-            <v_max>6</v_max>
-            <c_max></c_max>
-            <c_typ></c_typ>
-            <io_dia>300</io_dia>
+            <f>
+                <max>0.1</max>
+            </f>
+            <position>
+                <x>-500</x>
+                <y>500</y>
+            </position>
+            <diameter>
+                <typ>300</typ>
+            </diameter>
+            <v_max>
+                <value>6</value>
+            </v_max>
+            <esd> 
+                <type>HBM</type>
+                <rating>1500</rating>
+            </esd>
         </pin>
+
         <pin>
-            <pin_number>B1</pin_number>
-            <pin_name>SDA</pin_name>
-            <signal_type>I2C</signal_type>
-            <pin_dir></pin_dir>
-            <is_analog_routable>true</is_analog_routable>
-            <is_digital_routable>false</is_digital_routable>
-            <f_min></f_min>
-            <f_typ></f_typ>
-            <f_max>0.1</f_max>
-            <io_mechanical_type>Solder Ball</io_mechanical_type>
-            <ball_Location_x>0</ball_Location_x>
-            <ball_Location_y>500</ball_Location_y>
-            <signal_group></signal_group>
-            <signal_group_index></signal_group_index>
+            <pnum>A1</pnum>
+            <pname>GPOUT</pname>
+            <sig_type>Digital Output</sig_type>
+            <mech_type>Solder Ball</mech_type>
+            <netlist_name>BQ27426_GPOUT</netlist_name>
+            <vdd_pin>VDD</vdd_pin>
+            <gnd_pin>VSS</gnd_pin>
+            <f>
+                <max>0.1</max>
+            </f>
+            <position>
+                <x>-500</x>
+                <y>500</y>
+            </position>
+            <diameter>
+                <typ>300</typ>
+            </diameter>
+            <v_max>
+                <value>6</value>
+            </v_max>
+            <esd> 
+                <type>HBM</type>
+                <rating>1500</rating>
+            </esd>
+        </pin>
+
+        <pin>
+            <pnum>A2</pnum>
+            <pname>SDA</pname>
+            <sig_type>I2C</sig_type>
+            <mech_type>Solder Ball</mech_type>
             <netlist_name>BQ27426_SDA</netlist_name>
-            <pin_mode></pin_mode>
-            <num_modes></num_modes>
-            <esd_type>HBM</esd_type>
-            <esd_rating>1500</esd_rating>
-            <controlled_impedance></controlled_impedance>
             <vdd_pin>VDD</vdd_pin>
             <gnd_pin>VSS</gnd_pin>
-            <v_max>6</v_max>
-            <c_max></c_max>
-            <c_typ></c_typ>
-            <io_dia>300</io_dia>
+            <f>
+                <max>0.1</max>
+            </f>
+            <position>
+                <x>0</x>
+                <y>500</y>
+            </position>
+            <diameter>
+                <typ>300</typ>
+            </diameter>
+            <v_max>
+                <value>6</value>
+            </v_max>
+            <esd> 
+                <type>HBM</type>
+                <rating>1500</rating>
+            </esd>
         </pin>
+
         <pin>
-            <pin_number>A1</pin_number>
-            <pin_name>GPOUT</pin_name>
-            <signal_type>Digital Output</signal_type>
-            <pin_dir></pin_dir>
-            <is_analog_routable>false</is_analog_routable>
-            <is_digital_routable>false</is_digital_routable>
-            <f_min></f_min>
-            <f_typ></f_typ>
-            <f_max>0.1</f_max>
-            <io_mechanical_type>Solder Ball</io_mechanical_type>
-            <ball_Location_x>-500</ball_Location_x>
-            <ball_Location_y>500</ball_Location_y>
-            <signal_group></signal_group>
-            <signal_group_index></signal_group_index>
-            <netlist_name>BQ27426_GPOUT</netlist_name>
-            <pin_mode></pin_mode>
-            <num_modes></num_modes>
-            <esd_type>HBM</esd_type>
-            <esd_rating>1500</esd_rating>
-            <controlled_impedance></controlled_impedance>
+            <pnum>A3</pnum>
+            <pname>SCL</pname>
+            <sig_type>Clock</sig_type>
+            <mech_type>Solder Ball</mech_type>
+            <netlist_name>BQ27426_SCL</netlist_name>
             <vdd_pin>VDD</vdd_pin>
             <gnd_pin>VSS</gnd_pin>
-            <v_max>6</v_max>
-            <c_max></c_max>
-            <c_typ></c_typ>
-            <io_dia>300</io_dia>
+            <f>
+                <max>0.1</max>
+            </f>
+            <position>
+                <x>500</x>
+                <y>500</y>
+            </position>
+            <diameter>
+                <typ>300</typ>
+            </diameter>
+            <v_max>
+                <value>6</value>
+            </v_max>
+            <esd> 
+                <type>HBM</type>
+                <rating>1500</rating>
+            </esd>
         </pin>
+
         <pin>
-            <pin_number>A1</pin_number>
-            <pin_name>GPOUT</pin_name>
-            <signal_type>Digital Output</signal_type>
-            <pin_dir></pin_dir>
-            <is_analog_routable>false</is_analog_routable>
-            <is_digital_routable>false</is_digital_routable>
-            <f_min></f_min>
-            <f_typ></f_typ>
-            <f_max>0.1</f_max>
-            <io_mechanical_type>Solder Ball</io_mechanical_type>
-            <ball_Location_x>-500</ball_Location_x>
-            <ball_Location_y>500</ball_Location_y>
-            <signal_group></signal_group>
-            <signal_group_index></signal_group_index>
-            <netlist_name>BQ27426_GPOUT</netlist_name>
-            <pin_mode></pin_mode>
-            <num_modes></num_modes>
-            <esd_type>HBM</esd_type>
-            <esd_rating>1500</esd_rating>
-            <controlled_impedance></controlled_impedance>
+            <pnum>B1</pnum>
+            <pname>BIN</pname>
+            <sig_type>Digital Input</sig_type>
+            <mech_type>Solder Ball</mech_type>
+            <netlist_name>BQ27426_BIN</netlist_name>
             <vdd_pin>VDD</vdd_pin>
             <gnd_pin>VSS</gnd_pin>
-            <v_max>6</v_max>
-            <c_max></c_max>
-            <c_typ></c_typ>
-            <io_dia>300</io_dia>
+            <f>
+                <max>0.1</max>
+            </f>
+            <position>
+                <x>-500</x>
+                <y>0</y>
+            </position>
+            <diameter>
+                <typ>300</typ>
+            </diameter>
+            <v_max>
+                <value>6</value>
+            </v_max>
+            <esd> 
+                <type>HBM</type>
+                <rating>1500</rating>
+            </esd>
         </pin>
+
         <pin>
-            <pin_number>A1</pin_number>
-            <pin_name>GPOUT</pin_name>
-            <signal_type>Digital Output</signal_type>
-            <pin_dir></pin_dir>
-            <is_analog_routable>false</is_analog_routable>
-            <is_digital_routable>false</is_digital_routable>
-            <f_min></f_min>
-            <f_typ></f_typ>
-            <f_max>0.1</f_max>
-            <io_mechanical_type>Solder Ball</io_mechanical_type>
-            <ball_Location_x>-500</ball_Location_x>
-            <ball_Location_y>500</ball_Location_y>
-            <signal_group></signal_group>
-            <signal_group_index></signal_group_index>
-            <netlist_name>BQ27426_GPOUT</netlist_name>
-            <pin_mode></pin_mode>
-            <num_modes></num_modes>
-            <esd_type>HBM</esd_type>
-            <esd_rating>1500</esd_rating>
-            <controlled_impedance></controlled_impedance>
+            <pnum>B2</pnum>
+            <pname>VSS</pname>
+            <sig_type>Ground</sig_type>
+            <mech_type>Solder Ball</mech_type>
+            <netlist_name>BQ27426_VSS</netlist_name>
             <vdd_pin>VDD</vdd_pin>
             <gnd_pin>VSS</gnd_pin>
-            <v_max>6</v_max>
-            <c_max></c_max>
-            <c_typ></c_typ>
-            <io_dia>300</io_dia>
+            <f>
+                <max>0.1</max>
+            </f>
+            <position>
+                <x>0</x>
+                <y>0</y>
+            </position>
+            <diameter>
+                <typ>300</typ>
+            </diameter>
+            <v_max>
+                <value>6</value>
+            </v_max>
+            <esd> 
+                <type>HBM</type>
+                <rating>1500</rating>
+            </esd>
         </pin>
+
         <pin>
-            <pin_number>A1</pin_number>
-            <pin_name>GPOUT</pin_name>
-            <signal_type>Digital Output</signal_type>
-            <pin_dir></pin_dir>
-            <is_analog_routable>false</is_analog_routable>
-            <is_digital_routable>false</is_digital_routable>
-            <f_min></f_min>
-            <f_typ></f_typ>
-            <f_max>0.1</f_max>
-            <io_mechanical_type>Solder Ball</io_mechanical_type>
-            <ball_Location_x>-500</ball_Location_x>
-            <ball_Location_y>500</ball_Location_y>
-            <signal_group></signal_group>
-            <signal_group_index></signal_group_index>
-            <netlist_name>BQ27426_GPOUT</netlist_name>
-            <pin_mode></pin_mode>
-            <num_modes></num_modes>
-            <esd_type>HBM</esd_type>
-            <esd_rating>1500</esd_rating>
-            <controlled_impedance></controlled_impedance>
+            <pnum>B3</pnum>
+            <pname>VDD</pname>
+            <sig_type>Power</sig_type>
+            <mech_type>Solder Ball</mech_type>
+            <netlist_name>BQ27426_VDD</netlist_name>
             <vdd_pin>VDD</vdd_pin>
             <gnd_pin>VSS</gnd_pin>
-            <v_max>6</v_max>
-            <c_max></c_max>
-            <c_typ></c_typ>
-            <io_dia>300</io_dia>
+            <f>
+                <max>0.1</max>
+            </f>
+            <position>
+                <x>500</x>
+                <y>0</y>
+            </position>
+            <diameter>
+                <typ>300</typ>
+            </diameter>
+            <v_max>
+                <value>6</value>
+            </v_max>
+            <esd> 
+                <type>HBM</type>
+                <rating>1500</rating>
+            </esd>
         </pin>
+
         <pin>
-            <pin_number>A1</pin_number>
-            <pin_name>GPOUT</pin_name>
-            <signal_type>Digital Output</signal_type>
-            <pin_dir></pin_dir>
-            <is_analog_routable>false</is_analog_routable>
-            <is_digital_routable>false</is_digital_routable>
-            <f_min></f_min>
-            <f_typ></f_typ>
-            <f_max>0.1</f_max>
-            <io_mechanical_type>Solder Ball</io_mechanical_type>
-            <ball_Location_x>-500</ball_Location_x>
-            <ball_Location_y>500</ball_Location_y>
-            <signal_group></signal_group>
-            <signal_group_index></signal_group_index>
-            <netlist_name>BQ27426_GPOUT</netlist_name>
-            <pin_mode></pin_mode>
-            <num_modes></num_modes>
-            <esd_type>HBM</esd_type>
-            <esd_rating>1500</esd_rating>
-            <controlled_impedance></controlled_impedance>
+            <pnum>C1</pnum>
+            <pname>SRP</pname>
+            <sig_type>Digital Input</sig_type>
+            <mech_type>Solder Ball</mech_type>
+            <netlist_name>BQ27426_SRP</netlist_name>
             <vdd_pin>VDD</vdd_pin>
             <gnd_pin>VSS</gnd_pin>
-            <v_max>6</v_max>
-            <c_max></c_max>
-            <c_typ></c_typ>
-            <io_dia>300</io_dia>
+            <f>
+                <max>0.1</max>
+            </f>
+            <position>
+                <x>-500</x>
+                <y>-500</y>
+            </position>
+            <diameter>
+                <typ>300</typ>
+            </diameter>
+            <v_max>
+                <value>6</value>
+            </v_max>
+            <esd> 
+                <type>HBM</type>
+                <rating>1500</rating>
+            </esd>
         </pin>
+
         <pin>
-            <pin_number>A1</pin_number>
-            <pin_name>GPOUT</pin_name>
-            <signal_type>Digital Output</signal_type>
-            <pin_dir></pin_dir>
-            <is_analog_routable>false</is_analog_routable>
-            <is_digital_routable>false</is_digital_routable>
-            <f_min></f_min>
-            <f_typ></f_typ>
-            <f_max>0.1</f_max>
-            <io_mechanical_type>Solder Ball</io_mechanical_type>
-            <ball_Location_x>-500</ball_Location_x>
-            <ball_Location_y>500</ball_Location_y>
-            <signal_group></signal_group>
-            <signal_group_index></signal_group_index>
-            <netlist_name>BQ27426_GPOUT</netlist_name>
-            <pin_mode></pin_mode>
-            <num_modes></num_modes>
-            <esd_type>HBM</esd_type>
-            <esd_rating>1500</esd_rating>
-            <controlled_impedance></controlled_impedance>
+            <pnum>C2</pnum>
+            <pname>SRN</pname>
+            <sig_type>Digital Input</sig_type>
+            <mech_type>Solder Ball</mech_type>
+            <netlist_name>BQ27426_SRN</netlist_name>
             <vdd_pin>VDD</vdd_pin>
             <gnd_pin>VSS</gnd_pin>
-            <v_max>6</v_max>
-            <c_max></c_max>
-            <c_typ></c_typ>
-            <io_dia>300</io_dia>
+            <f>
+                <max>0.1</max>
+            </f>
+            <position>
+                <x>0</x>
+                <y>-500</y>
+            </position>
+            <diameter>
+                <typ>300</typ>
+            </diameter>
+            <v_max>
+                <value>6</value>
+            </v_max>
+            <esd> 
+                <type>HBM</type>
+                <rating>1500</rating>
+            </esd>
         </pin>
+
         <pin>
-            <pin_number>A1</pin_number>
-            <pin_name>GPOUT</pin_name>
-            <signal_type>Digital Output</signal_type>
-            <pin_dir></pin_dir>
-            <is_analog_routable>false</is_analog_routable>
-            <is_digital_routable>false</is_digital_routable>
-            <f_min></f_min>
-            <f_typ></f_typ>
-            <f_max>0.1</f_max>
-            <io_mechanical_type>Solder Ball</io_mechanical_type>
-            <ball_Location_x>-500</ball_Location_x>
-            <ball_Location_y>500</ball_Location_y>
-            <signal_group></signal_group>
-            <signal_group_index></signal_group_index>
-            <netlist_name>BQ27426_GPOUT</netlist_name>
-            <pin_mode></pin_mode>
-            <num_modes></num_modes>
-            <esd_type>HBM</esd_type>
-            <esd_rating>1500</esd_rating>
-            <controlled_impedance></controlled_impedance>
+            <pnum>C3</pnum>
+            <pname>BAT</pname>
+            <sig_type>Power</sig_type>
+            <mech_type>Solder Ball</mech_type>
+            <netlist_name>BQ27426_BAT</netlist_name>
             <vdd_pin>VDD</vdd_pin>
             <gnd_pin>VSS</gnd_pin>
-            <v_max>6</v_max>
-            <c_max></c_max>
-            <c_typ></c_typ>
-            <io_dia>300</io_dia>
+            <f>
+                <max>0.1</max>
+            </f>
+            <position>
+                <x>500</x>
+                <y>-500</y>
+            </position>
+            <diameter>
+                <typ>300</typ>
+            </diameter>
+            <v_max>
+                <value>6</value>
+            </v_max>
+            <esd> 
+                <type>HBM</type>
+                <rating>1500</rating>
+            </esd>
         </pin>
+
     </io>
+
     <elect>
-        <absolute_rating>
-            <v_max>Input Voltage</v_max>
-        </absolute_rating>
+        <esd> 
+            <type>HBM</type>
+            <rating>1500</rating>
+        </esd>
     </elect>
-</CDXML>
+
+</cdxml>
