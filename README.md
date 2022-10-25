@@ -1,9 +1,12 @@
 # Chiplet Data Exchange in XML Format (CDXML) #
 Chiplet Design Exchange (CDX) Workstream of ODSA focuses on electrical, mechanical, and thermal design exchange standards related to chiplets and integration in the context of multi chiplet modules, 2.5D and 3D Integrated Circuits (IC). This initial release of Chiplet Data Exchange in XML Format (CDXML) for but not limited to the following chiplets purposes:
-* Data exchange between different formats
+* Data exchange between different tools and formats
 * Design
 * Integration
 * Assembly rules
+* Mechanical characteristics
+* IO charateristics
+* Electrical characteristics
 
 This format is based on the zGlue Chiplets Info Exchange Format (ZEF) released with open-source copyright in 2019. As requested by the authors of ZEF, we acknowledge zGlue Inc for releasing ZEF in the open-source domain. All of the authors of ZEF have agreed to participate in developing this CDXML to replace the obsolete ZEF.
 
