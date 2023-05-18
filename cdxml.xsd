@@ -261,6 +261,32 @@
           </xs:all>  
         </xs:complexType>  
       </xs:element>  
+      <xs:element name="checklist"> 
+        <xs:complexType>  
+          <xs:all>  
+            <xs:element name="reference" type="xs:string" minOccurs="0"/>
+            <xs:element name="url" type="xs:string" minOccurs="0"/>
+            <xs:element name="Category"> 
+              <xs:complexType>  
+                <xs:all>  
+                  <xs:element name="Model"> 
+                    <xs:complexType>  
+                      <xs:all>  
+                        <xs:element name="Flow" type="xs:string" minOccurs="0"/>
+                        <xs:element name="Description" type="xs:string" minOccurs="0"/>
+                        <xs:element name="Status" type="xs:string" minOccurs="0"/>
+                        <xs:element name="Note" type="xs:string" minOccurs="0"/>
+                        <xs:element name="Filename" type="xs:string" minOccurs="0"/>
+                        <xs:element name="Location" type="xs:string" minOccurs="0"/>
+                      </xs:all>  
+                    </xs:complexType>  
+                  </xs:element>  
+                </xs:all>  
+              </xs:complexType>  
+            </xs:element>  
+          </xs:all>  
+        </xs:complexType>  
+      </xs:element>  
     </xs:all>  
   </xs:complexType>  
 </xs:element>  
