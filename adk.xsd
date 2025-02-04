@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:element name="Spec">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="Header"/>
+        <xsd:element ref="Includes"/>  
+        <xsd:element ref="GlobalTolerance"/>
+        <xsd:element ref="VersionMap"/>
+        <xsd:element ref="Layers"/>
+        <xsd:element ref="Geometries"/>
+        <xsd:element ref="Pads"/>
+        <xsd:element ref="Fiducials"/>
+        <xsd:element ref="Outlines"/>
+        <xsd:element ref="Sections"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="Header">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Process" type="xsd:string"/>
+        <xsd:element name="Revision" type="xsd:integer"/>
+        <xsd:element name="Version" type="xsd:integer" minOccurs="0"/>
+        <xsd:element name="Date" type="xsd:string" minOccurs="0"/>
+        <xsd:element name="DeviceName" type="xsd:string"/>
+        <xsd:element name="CellName" type="xsd:string" minOccurs="0"/>
+        <xsd:element name="Description" type="xsd:string"/>
+        <xsd:element name="Units" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="Includes">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Include" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>  
+              <xsd:element name="RulesFile" type="xsd:string"/>
+              <xsd:element name="Alias" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="GlobalTolerance">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Linear" type="xsd:float"/>
+        <xsd:element name="Angular" type="xsd:string"/> 
+        <xsd:element name="Area" type="xsd:float"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="VersionMap">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Version" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="RuleName" type="xsd:string"/>
+              <xsd:element name="Version" type="xsd:integer"/>
+            </xsd:sequence>  
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="Layers">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Layer" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Name" type="xsd:string"/>
+              <xsd:element name="LayerNumber" type="xsd:integer" minOccurs="0"/>
+              <xsd:element name="DataType" type="xsd:integer" minOccurs="0"/>
+            </xsd:sequence>
+            <xsd:attribute name="optionalFlag" type="xsd:boolean" default="false"/>
+          </xsd:complexType>
+        </xsd:element> 
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="Geometries">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Geometry" type="xsd:string" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="Pads">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Pad" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Name" type="xsd:string"/>
+              <xsd:element name="Geometry" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="BoxWidth" type="xsd:float" minOccurs="0"/>
+              <xsd:element name="BoxHeight" type="xsd:float" minOccurs="0"/>
+              <xsd:element name="BoxMinWidth" type="xsd:float" minOccurs="0"/>
+              <xsd:element name="BoxMinHeight" type="xsd:float" minOccurs="0"/>
+              <xsd:element name="BoxMaxWidth" type="xsd:float" minOccurs="0"/>
+              <xsd:element name="BoxMaxHeight" type="xsd:float" minOccurs="0"/>
+              <xsd:element name="LayerName" type="xsd:string" minOccurs="0"/>
+            </xsd:sequence>
+            <xsd:attribute name="optionalFlag" type="xsd:boolean" default="false"/>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="Fiducials">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Fiducial" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Name" type="xsd:string"/>
+              <xsd:element name="Geometry" type="xsd:string" minOccurs="0"/>  
+              <xsd:element name="BoxWidth" type="xsd:float" minOccurs="0"/>
+              <xsd:element name="BoxHeight" type="xsd:float" minOccurs="0"/>
+              <xsd:element name="BoxMinWidth" type="xsd:float" minOccurs="0"/>
+              <xsd:element name="BoxMinHeight" type="xsd:float" minOccurs="0"/>                
+              <xsd:element name="BoxMaxWidth" type="xsd:float" minOccurs="0"/>
+              <xsd:element name="BoxMaxHeight" type="xsd:float" minOccurs="0"/>
+              <xsd:element name="CellName" type="xsd:string"/>
+              <xsd:element name="LayerName" type="xsd:string"/>
+            </xsd:sequence>  
+            <xsd:attribute name="optionalFlag" type="xsd:boolean" default="false"/>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="Outlines">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Outline" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Name" type="xsd:string"/>
+              <xsd:element name="Geometry" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="BoxWidth" type="xsd:float" minOccurs="0"/>
+              <xsd:element name="BoxHeight" type="xsd:float" minOccurs="0"/>
+              <xsd:element name="TriangleWidth" type="xsd:float" minOccurs="0"/>
+              <xsd:element name="TriangleHeight" type="xsd:float" minOccurs="0"/>
+              <xsd:element name="Points" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="LayerName" type="xsd:string"/>
+            </xsd:sequence>
+            <xsd:attribute name="optionalFlag" type="xsd:boolean" default="false"/>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="Sections">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Section" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Name" type="xsd:string"/>  
+              <xsd:element name="Number" type="xsd:string"/>
+              <xsd:element name="SubSections" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="Rules" type="xsd:string" minOccurs="0"/>
+            </xsd:sequence>
+            <xsd:attribute name="optionalFlag" type="xsd:boolean" default="false"/>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xs:element name="SubstrateRules">
+      <xs:complexType>
+          <xs:sequence>
+              <!-- Package type for substrate design -->
+              <xs:element name="PackageType" type="xs:string" maxOccurs="unbounded">
+                  <xs:annotation>
+                      <xs:documentation>Specifies the package type (e.g., Organic, Ceramic, PCB).</xs:documentation>
+                  </xs:annotation>
+              </xs:element>
+
+              <!-- Package size -->
+              <xs:element name="PackageSize" type="xs:string" minOccurs="1" maxOccurs="1">
+                  <xs:annotation>
+                      <xs:documentation>Specifies the package size for substrate design.</xs:documentation>
+                  </xs:annotation>
+              </xs:element>
+
+              <!-- Bumping pad specifications -->
+              <xs:element name="BumpingPad" minOccurs="0" maxOccurs="unbounded">
+                  <xs:complexType>
+                      <xs:sequence>
+                          <xs:element name="GroundPadCount" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+                          <xs:element name="PowerPadCount" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+                          <xs:element name="SignalPadCount" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+                          <xs:element name="PadPitch" type="xs:decimal" minOccurs="1" maxOccurs="1">
+                              <xs:annotation>
+                                  <xs:documentation>Defines the pitch of bump pads in micrometers.</xs:documentation>
+                              </xs:annotation>
+                          </xs:element>
+                          <xs:element name="BumpDiameter" type="xs:decimal" minOccurs="1" maxOccurs="1">
+                              <xs:annotation>
+                                  <xs:documentation>Specifies the diameter of the bump.</xs:documentation>
+                              </xs:annotation>
+                          </xs:element>
+                          <xs:element name="UBMSize" type="xs:decimal" minOccurs="1" maxOccurs="1">
+                              <xs:annotation>
+                                  <xs:documentation>Specifies the Under Bump Metallization (UBM) size.</xs:documentation>
+                              </xs:annotation>
+                          </xs:element>
+                          <xs:element name="BumpComposition" type="xs:string" minOccurs="1" maxOccurs="1">
+                              <xs:annotation>
+                                  <xs:documentation>Specifies the bump composition (eutectic or lead-free).</xs:documentation>
+                              </xs:annotation>
+                          </xs:element>
+                      </xs:sequence>
+                      <xsd:attribute name="optionalFlag" type="xsd:boolean" default="false"/>
+                  </xs:complexType>
+              </xs:element>
+
+              <!-- Die pad specifications -->
+              <xs:element name="DiePad" minOccurs="0" maxOccurs="unbounded">
+                  <xs:complexType>
+                      <xs:sequence>
+                          <xs:element name="CoordinateDirection" type="xs:string" minOccurs="1" maxOccurs="1">
+                              <xs:annotation>
+                                  <xs:documentation>Defines the die pad coordinate direction (e.g., face up or face down).</xs:documentation>
+                              </xs:annotation>
+                          </xs:element>
+                      </xs:sequence>
+                      <xsd:attribute name="optionalFlag" type="xsd:boolean" default="false"/>
+                  </xs:complexType>
+              </xs:element>
+
+              <!-- Additional substrate rules -->
+              <xs:element name="ChipSize" type="xs:decimal" minOccurs="0" maxOccurs="1">
+                  <xs:annotation>
+                      <xs:documentation>Specifies the chip size in millimeters.</xs:documentation>
+                  </xs:annotation>
+                  <xsd:attribute name="optionalFlag" type="xsd:boolean" default="false"/>
+              </xs:element>
+              <xs:element name="ChipThickness" type="xs:decimal" minOccurs="0" maxOccurs="1">
+                  <xs:annotation>
+                      <xs:documentation>Specifies the chip thickness in micrometers.</xs:documentation>
+                  </xs:annotation>
+                  <xsd:attribute name="optionalFlag" type="xsd:boolean" default="false"/>
+              </xs:element>
+
+              <!-- Solder ball specifications -->
+              <xs:element name="SolderBall" minOccurs="0" maxOccurs="unbounded">
+                  <xs:complexType>
+                      <xs:sequence>
+                          <xs:element name="BallCount" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+                          <xs:element name="BallLocation" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                          <xs:element name="BallPitch" type="xs:decimal" minOccurs="1" maxOccurs="1">
+                              <xs:annotation>
+                                  <xs:documentation>Defines the pitch of solder balls in micrometers.</xs:documentation>
+                              </xs:annotation>
+                          </xs:element>
+                      </xs:sequence>
+                      <xsd:attribute name="optionalFlag" type="xsd:boolean" default="false"/>
+                  </xs:complexType>
+              </xs:element>
+
+              <!-- Customer-specific requirements -->
+              <xs:element name="CustomerRequirements" type="xs:string" minOccurs="0" maxOccurs="1">
+                  <xs:annotation>
+                      <xs:documentation>Specifies any special customer requirements, such as electrical, thermal, or warpage criteria.</xs:documentation>
+                  </xs:annotation>
+              </xs:element>
+          </xs:sequence>
+          <xsd:attribute name="optionalFlag" type="xsd:boolean" default="false"/>
+      </xs:complexType>
+  </xs:element>
+
+</xsd:schema>

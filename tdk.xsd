@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Spec">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Header"/>
+        <xs:element ref="Includes"/>  
+        <xs:element ref="GlobalTolerance"/>
+        <xs:element ref="VersionMap"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Header">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Process" type="xs:string"/>
+        <xs:element name="Revision" type="xs:integer"/>
+        <xs:element name="Version" type="xs:integer" minOccurs="0"/>
+        <xs:element name="Date" type="xs:string" minOccurs="0"/>
+        <xs:element name="Name" type="xs:string"/>
+        <xs:element name="Description" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Includes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Include" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>  
+              <xs:element name="File" type="xs:string"/>
+              <xs:element name="Version" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="GlobalTolerance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Linear" type="xs:float"/>
+        <xs:element name="Angular" type="xs:string"/> 
+        <xs:element name="Area" type="xs:float"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="VersionMap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Version" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" type="xs:string"/>
+              <xs:element name="Version" type="xs:integer"/>
+            </xs:sequence>  
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Root element -->
+  <xs:element name="cdxml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="mpn" type="xs:string" minOccurs="0"/>
+        <xs:element name="pad_structure" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:string"/>
+              <xs:element name="library_reference" type="xs:string" minOccurs="0"/>
+              <xs:element name="two_dimension">
+                <xs:complexType>
+                  <xs:choice>
+                    <xs:element name="circle">
+                      <xs:complexType>
+                        <xs:attribute name="radius" type="xs:decimal" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="oval">
+                      <xs:complexType>
+                        <xs:attribute name="width" type="xs:decimal" use="required"/>
+                        <xs:attribute name="height" type="xs:decimal" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="square">
+                      <xs:complexType>
+                        <xs:attribute name="dimension" type="xs:decimal" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="rectangle">
+                      <xs:complexType>
+                        <xs:attribute name="width" type="xs:decimal" use="required"/>
+                        <xs:attribute name="height" type="xs:decimal" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="polygon">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="point" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:attribute name="x" type="xs:decimal" use="required"/>
+                              <xs:attribute name="y" type="xs:decimal" use="required"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:choice>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="three_dimension">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="layer" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="name" type="xs:string"/>
+                          <xs:element name="material" type="xs:string"/>
+                          <xs:choice>
+                            <xs:element name="thickness" type="xs:decimal"/>
+                            <xs:element name="semi_sphere">
+                              <xs:complexType>
+                                <xs:sequence>
+                                  <xs:element name="height" type="xs:decimal"/>
+                                </xs:sequence>
+                              </xs:complexType>
+                            </xs:element>
+                          </xs:choice>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="io" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="mech_type">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="rotation" type="xs:decimal" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="pin">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="mech_type" type="xs:string"/>
+                    <xs:element name="sig_type" type="xs:string" minOccurs="0"/>
+                    <xs:element name="test" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="direction">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="in"/>
+                                <xs:enumeration value="out"/>
+                                <xs:enumeration value="inout"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="group" type="xs:string"/>
+                          <xs:element name="type">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="clock_in"/>
+                                <xs:enumeration value="clock_out"/>
+                                <xs:enumeration value="data_in"/>
+                                <xs:enumeration value="data_out"/>
+                                <xs:enumeration value="enable"/>
+                                <xs:enumeration value="test_mode"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="only" type="xs:boolean" use="optional"/>
+                        <xs:attribute name="sacrificial" type="xs:boolean" use="optional"/>
+                        <xs:attribute name="mode" type="xs:string" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="test_mode" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="pin" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="name" type="xs:string" use="required"/>
+                  <xs:attribute name="state" use="required">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="Logic0"/>
+                        <xs:enumeration value="Logic1"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+            <xs:attribute name="type" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="internal"/>
+                  <xs:enumeration value="external"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema> 

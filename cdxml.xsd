@@ -1,293 +1,358 @@
-<?xml version="1.0"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-<xs:element name="cdxml">  
-  <xs:complexType>  
-    <xs:all>  
-      <xs:element name="id" type="xs:string"/>
-      <xs:element name="mpn" type="xs:string"/>
-      <xs:element name="opn" type="xs:string"/>
-      <xs:element name="version" type="xs:string"/>
-      <xs:element name="created_date" type="xs:date"/>
-      <xs:element name="updated_date" type="xs:date"/>
-      <xs:element name="type" type="xs:string" minOccurs="0"/>
-      <xs:element name="description" type="xs:string" minOccurs="0"/>
-      <xs:element name="authors"> 
-        <xs:complexType>  
-          <xs:choice>  
-            <xs:element name="person" minOccurs="1" maxOccurs="unbounded"> 
-              <xs:complexType>  
-                <xs:all>  
-                  <xs:element name="name" type="xs:string"/>
-                  <xs:element name="email" type="xs:string" minOccurs="0"/>
-                  <xs:element name="company" type="xs:string" minOccurs="0"/>
-                </xs:all>  
-              </xs:complexType>  
-            </xs:element> 
-          </xs:choice>  
-        </xs:complexType>  
-      </xs:element> 
-      <xs:element name="mech"> 
-        <xs:complexType>  
-          <xs:all>  
-            <xs:element name="smt_compatible" type="xs:string" minOccurs="0"/>
-            <xs:element name="orientation_ccw" type="xs:integer" minOccurs="0"/>
-            <xs:element name="mold_material" type="xs:string" minOccurs="0"/>
-            <xs:element name="reflow_prof" type="xs:string" minOccurs="0"/>
-            <xs:element name="width"> 
-              <xs:complexType>  
-                <xs:all>  
-                  <xs:element name="min" type="xs:integer" minOccurs="0"/>
-                  <xs:element name="max" type="xs:integer" minOccurs="0"/>
-                  <xs:element name="typ" type="xs:integer" minOccurs="0"/>
-                  <xs:element name="tol" type="xs:integer" minOccurs="0"/>
-                  <xs:element name="unit" type="xs:string" minOccurs="0"/>
-                </xs:all>  
-              </xs:complexType>  
-            </xs:element>  
-            <xs:element name="length"> 
-              <xs:complexType>  
-                <xs:all>  
-                  <xs:element name="min" type="xs:integer" minOccurs="0"/>
-                  <xs:element name="max" type="xs:integer" minOccurs="0"/>
-                  <xs:element name="typ" type="xs:integer" minOccurs="0"/>
-                  <xs:element name="tol" type="xs:integer" minOccurs="0"/>
-                  <xs:element name="unit" type="xs:string" minOccurs="0"/>
-                </xs:all>  
-              </xs:complexType>  
-            </xs:element>  
-            <xs:element name="thickness"> 
-              <xs:complexType>  
-                <xs:all>  
-                  <xs:element name="min" type="xs:integer" minOccurs="0"/>
-                  <xs:element name="max" type="xs:integer" minOccurs="0"/>
-                  <xs:element name="typ" type="xs:integer" minOccurs="0"/>
-                  <xs:element name="tol" type="xs:integer" minOccurs="0"/>
-                  <xs:element name="unit" type="xs:string" minOccurs="0"/>
-                </xs:all>  
-              </xs:complexType>  
-            </xs:element>  
-            <xs:element name="io" minOccurs="0"> 
-              <xs:complexType>  
-                <xs:all>  
-                  <xs:element name="pitch"> 
-                    <xs:complexType>  
-                      <xs:all>  
-                        <xs:element name="min" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="max" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="typ" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="tol" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="unit" type="xs:string" minOccurs="0"/>
-                      </xs:all>  
-                    </xs:complexType>  
-                  </xs:element>  
-                  <xs:element name="thickness"> 
-                    <xs:complexType>  
-                      <xs:all>  
-                        <xs:element name="min" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="max" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="typ" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="tol" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="unit" type="xs:string" minOccurs="0"/>
-                      </xs:all>  
-                    </xs:complexType>  
-                  </xs:element>  
-                  <xs:element name="diameter"> 
-                    <xs:complexType>  
-                      <xs:all>  
-                        <xs:element name="min" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="max" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="typ" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="tol" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="unit" type="xs:string" minOccurs="0"/>
-                      </xs:all>  
-                    </xs:complexType>  
-                  </xs:element>  
-                  <xs:element name="count"> 
-                    <xs:complexType>  
-                      <xs:all>  
-                        <xs:element name="pop" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="unpop" type="xs:integer" minOccurs="0"/>
-                      </xs:all>  
-                    </xs:complexType>  
-                  </xs:element>  
-                </xs:all>  
-              </xs:complexType>  
-            </xs:element>  
-          </xs:all>  
-        </xs:complexType>  
-      </xs:element>  
-      <xs:element name="io" minOccurs="0"> 
-        <xs:complexType>  
-          <xs:choice>  
-            <xs:element name="pin" minOccurs="0" maxOccurs="unbounded"> 
-              <xs:complexType>  
-                <xs:all>  
-                  <xs:element name="pnum" type="xs:string"/>
-                  <xs:element name="pname" type="xs:string"/>
-                  <xs:element name="sig_type" type="xs:string" minOccurs="0"/>
-                  <xs:element name="dir" type="xs:string" minOccurs="0"/>
-                  <xs:element name="mech_type" type="xs:string" minOccurs="0"/>
-                  <xs:element name="netlist_name" type="xs:string" minOccurs="0"/>
-                  <xs:element name="vdd_pin" type="xs:string" minOccurs="0"/>
-                  <xs:element name="gnd_pin" type="xs:string" minOccurs="0"/>
-                  <xs:element name="impedance" minOccurs="0"> 
-                    <xs:complexType>  
-                      <xs:all>  
-                        <xs:element name="value" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="unit" type="xs:string" minOccurs="0"/>
-                      </xs:all>  
-                    </xs:complexType>  
-                  </xs:element>  
-                  <xs:element name="v_max" minOccurs="0"> 
-                    <xs:complexType>  
-                      <xs:all>  
-                        <xs:element name="value" type="xs:decimal" minOccurs="0"/>
-                        <xs:element name="unit" type="xs:string" minOccurs="0"/>
-                      </xs:all>  
-                    </xs:complexType>  
-                  </xs:element>  
-                  <xs:element name="f" minOccurs="0"> 
-                    <xs:complexType>  
-                      <xs:all>  
-                        <xs:element name="min" type="xs:decimal" minOccurs="0"/>
-                        <xs:element name="max" type="xs:decimal" minOccurs="0"/>
-                        <xs:element name="typ" type="xs:decimal" minOccurs="0"/>
-                        <xs:element name="tol" type="xs:decimal" minOccurs="0"/>
-                        <xs:element name="unit" type="xs:string" minOccurs="0"/>
-                      </xs:all>  
-                    </xs:complexType>  
-                  </xs:element>  
-                  <xs:element name="c" minOccurs="0"> 
-                    <xs:complexType>  
-                      <xs:all>  
-                        <xs:element name="min" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="max" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="typ" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="tol" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="unit" type="xs:string" minOccurs="0"/>
-                      </xs:all>  
-                    </xs:complexType>  
-                  </xs:element>  
-                  <xs:element name="diameter" minOccurs="0"> 
-                    <xs:complexType>  
-                      <xs:all>  
-                        <xs:element name="min" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="max" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="typ" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="tol" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="unit" type="xs:string" minOccurs="0"/>
-                      </xs:all>  
-                    </xs:complexType>  
-                  </xs:element>  
-                  <xs:element name="esd" minOccurs="0"> 
-                    <xs:complexType>  
-                      <xs:all>  
-                        <xs:element name="type" type="xs:string" minOccurs="0"/>
-                        <xs:element name="rating" type="xs:integer" minOccurs="0"/>
-                      </xs:all>  
-                    </xs:complexType>  
-                  </xs:element>  
-                  <xs:element name="position"> 
-                    <xs:complexType>  
-                      <xs:all>  
-                        <xs:element name="x" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="y" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="unit" type="xs:string" minOccurs="0"/>
-                      </xs:all>  
-                    </xs:complexType>  
-                  </xs:element>  
-                  <xs:element name="pin_mode" minOccurs="0"> 
-                    <xs:complexType>  
-                      <xs:all>  
-                        <xs:element name="id" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="name" type="xs:string" minOccurs="0"/>
-                      </xs:all>  
-                    </xs:complexType>  
-                  </xs:element>  
-                  <xs:element name="signal_mode" minOccurs="0"> 
-                    <xs:complexType>  
-                      <xs:all>  
-                        <xs:element name="id" type="xs:integer" minOccurs="0"/>
-                        <xs:element name="name" type="xs:string" minOccurs="0"/>
-                      </xs:all>  
-                    </xs:complexType>  
-                  </xs:element>  
-                </xs:all>  
-              </xs:complexType>  
-            </xs:element>  
-          </xs:choice>  
-        </xs:complexType>  
-      </xs:element>  
-      <xs:element name="elect" minOccurs="0"> 
-        <xs:complexType>  
-          <xs:all>  
-            <xs:element name="esd" minOccurs="0"> 
-              <xs:complexType>  
-                <xs:all>  
-                  <xs:element name="type" type="xs:string" minOccurs="0"/>
-                  <xs:element name="rating" type="xs:integer" minOccurs="0"/>
-                </xs:all>  
-              </xs:complexType>  
-            </xs:element>  
-            <xs:element name="abs_rating" minOccurs="0"> 
-              <xs:complexType>  
-                <xs:all>  
-                  <xs:element name="v_max" type="xs:string" minOccurs="0"/>
-                  <xs:element name="i_max" type="xs:integer" minOccurs="0"/>
-                </xs:all>  
-              </xs:complexType>  
-            </xs:element>  
-            <xs:element name="op_modes" minOccurs="0"> 
-              <xs:complexType>  
-                <xs:all>  
-                  <xs:element name="name" type="xs:string" minOccurs="0"/>
-                </xs:all>  
-              </xs:complexType>  
-            </xs:element>  
-            <xs:element name="v_modes" minOccurs="0"> 
-              <xs:complexType>  
-                <xs:all>  
-                  <xs:element name="name" type="xs:string" minOccurs="0"/>
-                </xs:all>  
-              </xs:complexType>  
-            </xs:element>  
-            <xs:element name="pvt" minOccurs="0"> 
-              <xs:complexType>  
-                <xs:all>  
-                  <xs:element name="name" type="xs:string" minOccurs="0"/>
-                </xs:all>  
-              </xs:complexType>  
-            </xs:element>  
-          </xs:all>  
-        </xs:complexType>  
-      </xs:element>  
-      <xs:element name="checklist"> 
-        <xs:complexType>  
-          <xs:all>  
-            <xs:element name="reference" type="xs:string" minOccurs="0"/>
-            <xs:element name="url" type="xs:string" minOccurs="0"/>
-            <xs:element name="Category"> 
-              <xs:complexType>  
-                <xs:all>  
-                  <xs:element name="Model"> 
-                    <xs:complexType>  
-                      <xs:all>  
-                        <xs:element name="Flow" type="xs:string" minOccurs="0"/>
-                        <xs:element name="Description" type="xs:string" minOccurs="0"/>
-                        <xs:element name="Status" type="xs:string" minOccurs="0"/>
-                        <xs:element name="Note" type="xs:string" minOccurs="0"/>
-                        <xs:element name="Filename" type="xs:string" minOccurs="0"/>
-                        <xs:element name="Location" type="xs:string" minOccurs="0"/>
-                      </xs:all>  
-                    </xs:complexType>  
-                  </xs:element>  
-                </xs:all>  
-              </xs:complexType>  
-            </xs:element>  
-          </xs:all>  
-        </xs:complexType>  
-      </xs:element>  
-    </xs:all>  
-  </xs:complexType>  
-</xs:element>  
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:element name="Spec">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="Header"/>
+        <xsd:element ref="Includes"/>  
+        <xsd:element ref="GlobalTolerance"/>
+        <xsd:element ref="VersionMap"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="Header">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Process" type="xsd:string"/>
+        <xsd:element name="Revision" type="xsd:integer"/>
+        <xsd:element name="Version" type="xsd:integer" minOccurs="0"/>
+        <xsd:element name="Date" type="xsd:string" minOccurs="0"/>
+        <xsd:element name="Name" type="xsd:string"/>
+        <xsd:element name="Description" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="Includes">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Include" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>  
+              <xsd:element name="File" type="xsd:string"/>
+              <xsd:element name="Version" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="GlobalTolerance">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Linear" type="xsd:float"/>
+        <xsd:element name="Angular" type="xsd:string"/> 
+        <xsd:element name="Area" type="xsd:float"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="VersionMap">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Version" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Name" type="xsd:string"/>
+              <xsd:element name="Version" type="xsd:integer"/>
+            </xsd:sequence>  
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xs:element name="cdxml">  
+    <xs:complexType>  
+      <xs:all>  
+        <xs:element name="id" type="xs:string"/>
+        <xs:element name="mpn" type="xs:string"/>
+        <xs:element name="opn" type="xs:string"/>
+        <xs:element name="version" type="xs:string"/>
+        <xs:element name="created_date" type="xs:date"/>
+        <xs:element name="updated_date" type="xs:date"/>
+        <xs:element name="type" type="xs:string" minOccurs="0"/>
+        <xs:element name="description" type="xs:string" minOccurs="0"/>
+        <xs:element name="authors"> 
+          <xs:complexType>  
+            <xs:choice>  
+              <xs:element name="person" minOccurs="1" maxOccurs="unbounded"> 
+                <xs:complexType>  
+                  <xs:all>  
+                    <xs:element name="name" type="xs:string"/>
+                    <xs:element name="email" type="xs:string" minOccurs="0"/>
+                    <xs:element name="company" type="xs:string" minOccurs="0"/>
+                  </xs:all>  
+                </xs:complexType>  
+              </xs:element> 
+            </xs:choice>  
+          </xs:complexType>  
+        </xs:element> 
+        <xs:element name="mech"> 
+          <xs:complexType>  
+            <xs:all>  
+              <xs:element name="smt_compatible" type="xs:string" minOccurs="0"/>
+              <xs:element name="orientation_ccw" type="xs:integer" minOccurs="0"/>
+              <xs:element name="mold_material" type="xs:string" minOccurs="0"/>
+              <xs:element name="reflow_prof" type="xs:string" minOccurs="0"/>
+              <xs:element name="width"> 
+                <xs:complexType>  
+                  <xs:all>  
+                    <xs:element name="min" type="xs:integer" minOccurs="0"/>
+                    <xs:element name="max" type="xs:integer" minOccurs="0"/>
+                    <xs:element name="typ" type="xs:integer" minOccurs="0"/>
+                    <xs:element name="tol" type="xs:integer" minOccurs="0"/>
+                    <xs:element name="unit" type="xs:string" minOccurs="0"/>
+                  </xs:all>  
+                </xs:complexType>  
+              </xs:element>  
+              <xs:element name="length"> 
+                <xs:complexType>  
+                  <xs:all>  
+                    <xs:element name="min" type="xs:integer" minOccurs="0"/>
+                    <xs:element name="max" type="xs:integer" minOccurs="0"/>
+                    <xs:element name="typ" type="xs:integer" minOccurs="0"/>
+                    <xs:element name="tol" type="xs:integer" minOccurs="0"/>
+                    <xs:element name="unit" type="xs:string" minOccurs="0"/>
+                  </xs:all>  
+                </xs:complexType>  
+              </xs:element>  
+              <xs:element name="thickness"> 
+                <xs:complexType>  
+                  <xs:all>  
+                    <xs:element name="min" type="xs:integer" minOccurs="0"/>
+                    <xs:element name="max" type="xs:integer" minOccurs="0"/>
+                    <xs:element name="typ" type="xs:integer" minOccurs="0"/>
+                    <xs:element name="tol" type="xs:integer" minOccurs="0"/>
+                    <xs:element name="unit" type="xs:string" minOccurs="0"/>
+                  </xs:all>  
+                </xs:complexType>  
+              </xs:element>  
+              <xs:element name="io" minOccurs="0"> 
+                <xs:complexType>  
+                  <xs:all>  
+                    <xs:element name="pitch"> 
+                      <xs:complexType>  
+                        <xs:all>  
+                          <xs:element name="min" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="max" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="typ" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="tol" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="unit" type="xs:string" minOccurs="0"/>
+                        </xs:all>  
+                      </xs:complexType>  
+                    </xs:element>  
+                    <xs:element name="thickness"> 
+                      <xs:complexType>  
+                        <xs:all>  
+                          <xs:element name="min" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="max" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="typ" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="tol" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="unit" type="xs:string" minOccurs="0"/>
+                        </xs:all>  
+                      </xs:complexType>  
+                    </xs:element>  
+                    <xs:element name="diameter"> 
+                      <xs:complexType>  
+                        <xs:all>  
+                          <xs:element name="min" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="max" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="typ" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="tol" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="unit" type="xs:string" minOccurs="0"/>
+                        </xs:all>  
+                      </xs:complexType>  
+                    </xs:element>  
+                    <xs:element name="count"> 
+                      <xs:complexType>  
+                        <xs:all>  
+                          <xs:element name="pop" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="unpop" type="xs:integer" minOccurs="0"/>
+                        </xs:all>  
+                      </xs:complexType>  
+                    </xs:element>  
+                  </xs:all>  
+                </xs:complexType>  
+              </xs:element>  
+            </xs:all>  
+          </xs:complexType>  
+        </xs:element>  
+        <xs:element name="io" minOccurs="0"> 
+          <xs:complexType>  
+            <xs:choice>  
+              <xs:element name="pin" minOccurs="0" maxOccurs="unbounded"> 
+                <xs:complexType>  
+                  <xs:all>  
+                    <xs:element name="pnum" type="xs:string"/>
+                    <xs:element name="pname" type="xs:string"/>
+                    <xs:element name="sig_type" type="xs:string" minOccurs="0"/>
+                    <xs:element name="dir" type="xs:string" minOccurs="0"/>
+                    <xs:element name="mech_type" type="xs:string" minOccurs="0"/>
+                    <xs:element name="netlist_name" type="xs:string" minOccurs="0"/>
+                    <xs:element name="vdd_pin" type="xs:string" minOccurs="0"/>
+                    <xs:element name="gnd_pin" type="xs:string" minOccurs="0"/>
+                    <xs:element name="impedance" minOccurs="0"> 
+                      <xs:complexType>  
+                        <xs:all>  
+                          <xs:element name="value" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="unit" type="xs:string" minOccurs="0"/>
+                        </xs:all>  
+                      </xs:complexType>  
+                    </xs:element>  
+                    <xs:element name="v_max" minOccurs="0"> 
+                      <xs:complexType>  
+                        <xs:all>  
+                          <xs:element name="value" type="xs:decimal" minOccurs="0"/>
+                          <xs:element name="unit" type="xs:string" minOccurs="0"/>
+                        </xs:all>  
+                      </xs:complexType>  
+                    </xs:element>  
+                    <xs:element name="f" minOccurs="0"> 
+                      <xs:complexType>  
+                        <xs:all>  
+                          <xs:element name="min" type="xs:decimal" minOccurs="0"/>
+                          <xs:element name="max" type="xs:decimal" minOccurs="0"/>
+                          <xs:element name="typ" type="xs:decimal" minOccurs="0"/>
+                          <xs:element name="tol" type="xs:decimal" minOccurs="0"/>
+                          <xs:element name="unit" type="xs:string" minOccurs="0"/>
+                        </xs:all>  
+                      </xs:complexType>  
+                    </xs:element>  
+                    <xs:element name="c" minOccurs="0"> 
+                      <xs:complexType>  
+                        <xs:all>  
+                          <xs:element name="min" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="max" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="typ" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="tol" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="unit" type="xs:string" minOccurs="0"/>
+                        </xs:all>  
+                      </xs:complexType>  
+                    </xs:element>  
+                    <xs:element name="diameter" minOccurs="0"> 
+                      <xs:complexType>  
+                        <xs:all>  
+                          <xs:element name="min" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="max" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="typ" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="tol" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="unit" type="xs:string" minOccurs="0"/>
+                        </xs:all>  
+                      </xs:complexType>  
+                    </xs:element>  
+                    <xs:element name="esd" minOccurs="0"> 
+                      <xs:complexType>  
+                        <xs:all>  
+                          <xs:element name="type" type="xs:string" minOccurs="0"/>
+                          <xs:element name="rating" type="xs:integer" minOccurs="0"/>
+                        </xs:all>  
+                      </xs:complexType>  
+                    </xs:element>  
+                    <xs:element name="position"> 
+                      <xs:complexType>  
+                        <xs:all>  
+                          <xs:element name="x" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="y" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="unit" type="xs:string" minOccurs="0"/>
+                        </xs:all>  
+                      </xs:complexType>  
+                    </xs:element>  
+                    <xs:element name="pin_mode" minOccurs="0"> 
+                      <xs:complexType>  
+                        <xs:all>  
+                          <xs:element name="id" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="name" type="xs:string" minOccurs="0"/>
+                        </xs:all>  
+                      </xs:complexType>  
+                    </xs:element>  
+                    <xs:element name="signal_mode" minOccurs="0"> 
+                      <xs:complexType>  
+                        <xs:all>  
+                          <xs:element name="id" type="xs:integer" minOccurs="0"/>
+                          <xs:element name="name" type="xs:string" minOccurs="0"/>
+                        </xs:all>  
+                      </xs:complexType>  
+                    </xs:element>  
+                  </xs:all>  
+                </xs:complexType>  
+              </xs:element>  
+            </xs:choice>  
+          </xs:complexType>  
+        </xs:element>  
+        <xs:element name="elect" minOccurs="0"> 
+          <xs:complexType>  
+            <xs:all>  
+              <xs:element name="esd" minOccurs="0"> 
+                <xs:complexType>  
+                  <xs:all>  
+                    <xs:element name="type" type="xs:string" minOccurs="0"/>
+                    <xs:element name="rating" type="xs:integer" minOccurs="0"/>
+                  </xs:all>  
+                </xs:complexType>  
+              </xs:element>  
+              <xs:element name="abs_rating" minOccurs="0"> 
+                <xs:complexType>  
+                  <xs:all>  
+                    <xs:element name="v_max" type="xs:string" minOccurs="0"/>
+                    <xs:element name="i_max" type="xs:integer" minOccurs="0"/>
+                  </xs:all>  
+                </xs:complexType>  
+              </xs:element>  
+              <xs:element name="op_modes" minOccurs="0"> 
+                <xs:complexType>  
+                  <xs:all>  
+                    <xs:element name="name" type="xs:string" minOccurs="0"/>
+                  </xs:all>  
+                </xs:complexType>  
+              </xs:element>  
+              <xs:element name="v_modes" minOccurs="0"> 
+                <xs:complexType>  
+                  <xs:all>  
+                    <xs:element name="name" type="xs:string" minOccurs="0"/>
+                  </xs:all>  
+                </xs:complexType>  
+              </xs:element>  
+              <xs:element name="pvt" minOccurs="0"> 
+                <xs:complexType>  
+                  <xs:all>  
+                    <xs:element name="name" type="xs:string" minOccurs="0"/>
+                  </xs:all>  
+                </xs:complexType>  
+              </xs:element>  
+            </xs:all>  
+          </xs:complexType>  
+        </xs:element>  
+        <xs:element name="checklist"> 
+          <xs:complexType>  
+            <xs:all>  
+              <xs:element name="reference" type="xs:string" minOccurs="0"/>
+              <xs:element name="url" type="xs:string" minOccurs="0"/>
+              <xs:element name="Category"> 
+                <xs:complexType>  
+                  <xs:all>  
+                    <xs:element name="Model"> 
+                      <xs:complexType>  
+                        <xs:all>  
+                          <xs:element name="Flow" type="xs:string" minOccurs="0"/>
+                          <xs:element name="Description" type="xs:string" minOccurs="0"/>
+                          <xs:element name="Status" type="xs:string" minOccurs="0"/>
+                          <xs:element name="Note" type="xs:string" minOccurs="0"/>
+                          <xs:element name="Filename" type="xs:string" minOccurs="0"/>
+                          <xs:element name="Location" type="xs:string" minOccurs="0"/>
+                        </xs:all>  
+                      </xs:complexType>  
+                    </xs:element>  
+                  </xs:all>  
+                </xs:complexType>  
+              </xs:element>  
+            </xs:all>  
+          </xs:complexType>  
+        </xs:element>  
+      </xs:all>  
+    </xs:complexType>  
+  </xs:element>  
 </xs:schema>

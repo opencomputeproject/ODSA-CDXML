@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Spec">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Header"/>
+        <xs:element ref="Includes"/>  
+        <xs:element ref="GlobalTolerance"/>
+        <xs:element ref="VersionMap"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Header">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Process" type="xs:string"/>
+        <xs:element name="Revision" type="xs:integer"/>
+        <xs:element name="Version" type="xs:integer" minOccurs="0"/>
+        <xs:element name="Date" type="xs:string" minOccurs="0"/>
+        <xs:element name="Name" type="xs:string"/>
+        <xs:element name="Description" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Includes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Include" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>  
+              <xs:element name="File" type="xs:string"/>
+              <xs:element name="Version" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="GlobalTolerance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Linear" type="xs:float"/>
+        <xs:element name="Angular" type="xs:string"/> 
+        <xs:element name="Area" type="xs:float"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="VersionMap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Version" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" type="xs:string"/>
+              <xs:element name="Version" type="xs:integer"/>
+            </xs:sequence>  
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Root element -->
+  <xs:element name="MaterialProperties">
+    <xs:complexType>
+      <xs:sequence>
+        
+        <!-- Electrical Properties -->
+        <xs:element name="ElectricalProperties">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Property" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PropertyName" type="xs:string"/>
+                    <xs:element name="Definition" type="xs:string"/>
+                    <xs:element name="Units" type="xs:string"/>
+                    <xs:element name="Conditions" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        
+        <!-- Thermal Properties -->
+        <xs:element name="ThermalProperties">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Property" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PropertyName" type="xs:string"/>
+                    <xs:element name="Definition" type="xs:string"/>
+                    <xs:element name="Units" type="xs:string"/>
+                    <xs:element name="Conditions" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- Structural Properties -->
+        <xs:element name="StructuralProperties">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Property" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PropertyName" type="xs:string"/>
+                    <xs:element name="Definition" type="xs:string"/>
+                    <xs:element name="Units" type="xs:string"/>
+                    <xs:element name="Conditions" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- Failure Properties -->
+        <xs:element name="FailureProperties">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Property" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PropertyName" type="xs:string"/>
+                    <xs:element name="Definition" type="xs:string"/>
+                    <xs:element name="Units" type="xs:string"/>
+                    <xs:element name="Conditions" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- Thermo-Mechanical Properties -->
+        <xs:element name="ThermoMechanicalProperties">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Property" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PropertyName" type="xs:string"/>
+                    <xs:element name="Definition" type="xs:string"/>
+                    <xs:element name="Units" type="xs:string"/>
+                    <xs:element name="Conditions" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- Optical Properties -->
+        <xs:element name="OpticalProperties">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Property" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PropertyName" type="xs:string"/>
+                    <xs:element name="Definition" type="xs:string"/>
+                    <xs:element name="Units" type="xs:string"/>
+                    <xs:element name="Conditions" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- Surface and Mechanical Properties -->
+        <xs:element name="SurfaceAndMechanicalProperties">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Property" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PropertyName" type="xs:string"/>
+                    <xs:element name="Definition" type="xs:string"/>
+                    <xs:element name="Units" type="xs:string"/>
+                    <xs:element name="Conditions" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
