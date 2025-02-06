@@ -5,7 +5,7 @@
     <xsd:complexType>
       <xsd:sequence>
         <xsd:element ref="Header"/>
-        <xsd:element ref="Includes"/>  
+        <xsd:element ref="Includes"/>       <!-- Includes other specs -->
         <xsd:element ref="GlobalTolerance"/>
         <xsd:element ref="VersionMap"/>
       </xsd:sequence>
@@ -25,6 +25,7 @@
     </xsd:complexType>
   </xsd:element>
 
+  <!-- Include other spaec such as ADK, MDK, TDK, and etc. -->
   <xsd:element name="Includes">
     <xsd:complexType>
       <xsd:sequence>
